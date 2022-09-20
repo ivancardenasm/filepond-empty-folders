@@ -99,6 +99,13 @@ const getFilesInDirectory = entry =>
         let dirCounter = 0;
         let fileCounter = 0;
 
+        const createEmptyFileInFolder = folder => {
+            const fullPath = folder.fullPath
+            const emptyFile = new File([], "empty.empty", {type: "text/plain"});
+            if (fullPath) emptyFile._relativePath = fullPath;
+            files.push(emptyFile);
+        }
+
         const resolveIfDone = () => {
             if (fileCounter === 0 && dirCounter === 0) {
                 resolve(files);
@@ -127,6 +134,7 @@ const getFilesInDirectory = entry =>
     
                         // recursively read more directories
                         if (entry.isDirectory) {
+                            createEmptyFileInFolder(entry);
                             readEntries(entry);
                         }
                         else {
