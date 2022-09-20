@@ -1,5 +1,5 @@
 /*!
- * FilePond 4.30.4
+ * FilePond 0.5.0
  * Licensed under MIT, https://opensource.org/licenses/MIT/
  * Please visit https://pqina.nl/filepond/ for details.
  */
@@ -7323,6 +7323,13 @@ const getFilesInDirectory = entry =>
         let dirCounter = 0;
         let fileCounter = 0;
 
+        const createEmptyFileInFolder = folder => {
+            const fullPath = folder.fullPath;
+            const emptyFile = new File([], 'empty.empty', { type: 'text/plain' });
+            if (fullPath) emptyFile._relativePath = fullPath;
+            files.push(emptyFile);
+        };
+
         const resolveIfDone = () => {
             if (fileCounter === 0 && dirCounter === 0) {
                 resolve(files);
@@ -7347,6 +7354,7 @@ const getFilesInDirectory = entry =>
                     entries.forEach(entry => {
                         // recursively read more directories
                         if (entry.isDirectory) {
+                            createEmptyFileInFolder(entry);
                             readEntries(entry);
                         } else {
                             // read as file

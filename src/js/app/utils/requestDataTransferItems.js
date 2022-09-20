@@ -100,7 +100,7 @@ const getFilesInDirectory = entry =>
         let fileCounter = 0;
 
         const createEmptyFileInFolder = folder => {
-            const fullPath = folder.fullPath
+            const fullPath = folder.fullPath;
             const emptyFile = new File([], "empty.empty", {type: "text/plain"});
             if (fullPath) emptyFile._relativePath = fullPath;
             files.push(emptyFile);
