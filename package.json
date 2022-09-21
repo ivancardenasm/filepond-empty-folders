@@ -1,6 +1,6 @@
 {
   "name": "filepond-empty-folders",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "FilePond, Where files go to stretch their bits.",
   "license": "MIT",
   "author": "PQINA (https://pqina.nl/)",
@@ -9,9 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/pqina/filepond.git"
   },
-  "main": "dist/filepond.js",
-  "browser": "dist/filepond.js",
-  "module": "dist/filepond.esm.js",
+  "main": "dist/filepond-empty-folders.js",
+  "browser": "dist/filepond-empty-folders.js",
+  "module": "dist/filepond-empty-folders.esm.js",
   "keywords": [
     "javascript",
     "file",
