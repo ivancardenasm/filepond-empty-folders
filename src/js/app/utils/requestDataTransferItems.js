@@ -136,9 +136,7 @@ const getFilesInDirectory = entry =>
                         if (entry.isDirectory) {
                             createEmptyFileInFolder(entry);
                             readEntries(entry);
-                        }
-                        else {
-
+                        } else {
                             // read as file
                             fileCounter++;
 
@@ -149,7 +147,6 @@ const getFilesInDirectory = entry =>
                                 fileCounter--;
                                 resolveIfDone();
                             });
-
                         }
                     });
 
