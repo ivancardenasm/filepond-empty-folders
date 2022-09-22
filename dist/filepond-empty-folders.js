@@ -1,5 +1,5 @@
 /*!
- * FilePond 1.0.10
+ * FilePond 1.0.11
  * Licensed under MIT, https://opensource.org/licenses/MIT/
  * Please visit https://pqina.nl/filepond/ for details.
  */
@@ -10029,8 +10029,8 @@
             var fileCounter = 0;
 
             var createEmptyFileInFolder = function createEmptyFileInFolder(folder) {
-                var fullPath = folder.fullPath;
-                var emptyFile = new File([], 'empty.empty', { type: 'text/plain' });
+                var fullPath = folder.fullPath + '/empty-folder.empty-folder';
+                var emptyFile = new File([], 'empty-folder.empty-folder', { type: 'text/plain' });
                 if (fullPath) emptyFile._relativePath = fullPath;
                 files.push(emptyFile);
             };
